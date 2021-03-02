@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Validate Terraform
+
+# Controls when the action will run. Triggers the workflow on push or pull request events but only for the specified branch
+     
+jobs:
+  pull-action-preview:
+    runs-on: ubuntu-20.04
+
+# Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Install required packages
+        run: |
+          sudo apt-get update && sudo apt-get -y install tree findutils xjobs wget unzip
+          sudo wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
+          sudo unzip terraform_0.14.7_linux_amd64.zip
+          terraform -help
+  
+# Checks the validation of the Terraform file. If successful, exit code will be 0 otherwise, errors will be shown
+
+      - name: terraform-validate 
+        id: validate
+        run: |
+          echo $INPUT_PATH
+          sudo terraform init -backend=false && \
+          sudo terraform validate
