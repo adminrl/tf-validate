@@ -3,7 +3,9 @@
 name: Validate Terraform
 
 # Controls when the action will run. Triggers the workflow on push or pull request events but only for the specified branch
-     
+   
+on: push
+   
 jobs:
   pull-action-preview:
     runs-on: ubuntu-20.04
