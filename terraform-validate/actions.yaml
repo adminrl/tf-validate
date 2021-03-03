@@ -8,5 +8,5 @@ inputs:
 
 runs:
   using: docker
-  image: ../image/Dockerfile
+  image: ../image/Dockerfile-base
   entrypoint: /entrypoints/validate.sh
