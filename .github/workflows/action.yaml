@@ -7,11 +7,13 @@ jobs:
   setup:
     runs-on:
       using: docker
-      image: ../image/Dockerfile-base
+    steps:
+      - run: ../image/Dockerfile-base
       
   build:
     needs: setup
-    runs-on: ubuntu-20.04
+    runs-on:
+      using: docker
     steps:
       - run: /entrypoints/validate.sh
     
