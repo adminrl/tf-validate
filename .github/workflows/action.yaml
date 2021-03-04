@@ -1,15 +1,28 @@
 name: terraform-validate
-description: Validate a terraform configuration directory
+#description: Validate a terraform configuration directory
 
 on: push 
 
-jobs: Run Validate
-  inputs:
-    path:
-      description: Path to the terraform configuration
-      required: true
+jobs:
+  setup:
+    runs-on:
+      using: docker
+      image: ../image/Dockerfile-base
+      
+  build:
+    needs: setup
+    runs-on: ubuntu-20.04
+    steps:
+      - run: /entrypoints/validate.sh
+    
 
-runs:
-  using: docker
-  image: ../image/Dockerfile-base
-  entrypoint: /entrypoints/validate.sh
+#jobs: Run Validate
+#  inputs:
+#    path:
+#      description: Path to the terraform configuration
+#      required: true
+
+#runs:
+#  using: docker
+#  image: ../image/Dockerfile-base
+#  entrypoint: /entrypoints/validate.sh
