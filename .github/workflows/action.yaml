@@ -5,15 +5,13 @@ on: push
 
 jobs:
   setup:
-    runs-on:
-      using: docker
+    runs-on: docker
     steps:
       - run: ../image/Dockerfile-base
       
   build:
     needs: setup
-    runs-on:
-      using: ubuntu-20.04
+    runs-on: docker
     steps:
       - run: /entrypoints/validate.sh
     
