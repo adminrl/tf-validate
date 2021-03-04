@@ -3,10 +3,11 @@ description: Validate a terraform configuration directory
 
 on: push 
 
-inputs:
-  path:
-    description: Path to the terraform configuration
-    required: true
+jobs: Run Validate
+  inputs:
+    path:
+      description: Path to the terraform configuration
+      required: true
 
 runs:
   using: docker
