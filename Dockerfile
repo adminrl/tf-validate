@@ -6,14 +6,14 @@ FROM ubuntu:20.04
 
 RUN \
 # Update
-sudo apt-get update && \
-sudo apt-get -y upgrade && \
+apt-get update && \
+apt-get -y upgrade && \
 # Install Tree, Findutils, Xjobs, Wget, Unzip
-sudo apt-get -y install tree findutils xjobs wget unzip \
+apt-get -y install tree findutils xjobs wget unzip \
 #Install Terraform
-sudo wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip \
+wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip \
 # Unzip 
-sudo unzip terraform_0.14.7_linux_amd64.zip \
+unzip terraform_0.14.7_linux_amd64.zip \
 # Move to local bin
 mv terraform /usr/local/bin/ \
 # Check to see if Terraform is installed
