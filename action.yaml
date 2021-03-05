@@ -8,6 +8,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   entrypoint: /validate.sh
+  shell: bash
 
 #jobs:
 
