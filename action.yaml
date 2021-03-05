@@ -20,7 +20,7 @@ jobs:
         uses: adminrl/tf-validate@v1.1
         with:
           context: ./
-          file: ./image/Dockerfile
+          file: ./Dockerfile
       
 
 #jobs: Run Validate
