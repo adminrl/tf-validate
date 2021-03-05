@@ -14,10 +14,10 @@ jobs:
     steps:
    
       - name: Check Out Repo 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1.1
    
       - name: Setup & Validate
-        uses: adminrl/tf-validate@v2
+        uses: adminrl/tf-validate@v1.1
         with:
           context: ./
           file: ./image/Dockerfile
