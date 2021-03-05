@@ -1,4 +1,4 @@
-#!/bin/sh          
+#!/bin/bash          
    
 listOfProviderFiles=/tmp/listofproviderfiles
 echo "Finding All provider.tf Files..."
