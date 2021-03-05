@@ -20,7 +20,7 @@ mv terraform /usr/local/bin/ \
 terraform --version 
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY adminrl/tf-validate/image/entrypoints/validate.sh  /validate.sh
+COPY adminrl/tf-validate/validate.sh  /validate.sh
 
 RUN chmod +x validate.sh
 
