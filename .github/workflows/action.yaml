@@ -5,7 +5,7 @@ on:
   push:
     branches: [ main ]
 
-#triggers event on push to main (or set to trigger on pull request and you can define which branch)
+#triggers event on push to main (or set to trigger on pull request and you can define which branch).
 
 jobs:
 
