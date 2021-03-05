@@ -1,5 +1,5 @@
 name: terraform-validate
-#description: Validate a terraform configuration directory
+#description: Validate a terraform configuration directory.
 
 on:
   push:
