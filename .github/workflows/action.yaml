@@ -14,7 +14,7 @@ jobs:
     steps:
    
       - name: Check Out Repo 
-        uses: actions/checkout@v1.1
+        uses: actions/checkout@v2
    
       - name: Setup & Validate
         uses: adminrl/tf-validate@v1.1
