@@ -1,8 +1,11 @@
 name: terraform-validate
 #description: Validate a terraform configuration directory
 
-on: push 
-#triggers event on push (or pull and you can define which branch)
+on:
+  push:
+    branches: [ main ]
+
+#triggers event on push to main (or set to trigger on pull request and you can define which branch)
 
 jobs:
 
@@ -14,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
    
       - name: Setup & Validate
-        run:  tf-validate/image/Dockerfile 
+        run:  adminrl/tf-validate/image/Dockerfile 
       
 
 #jobs: Run Validate
