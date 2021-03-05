@@ -1,26 +1,28 @@
 name: terraform-validate
-#description: Validate a terraform configuration directory.
-
-on:
-  push:
-    branches: [ main ]
+description: Validate a terraform configuration directory.
 
 #triggers event on push to main (or set to trigger on pull request and you can define which branch).
 
-jobs:
 
-  build:
-    runs-on: ubuntu-20.04
-    steps:
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  entrypoint: /validate.sh
+
+#jobs:
+
+#  build:
+#    runs-on: ubuntu-20.04
+#    steps:
    
-      - name: Check Out Repo 
-        uses: actions/checkout@v2
+#      - name: Check Out Repo 
+#        uses: actions/checkout@v2
    
-      - name: Setup & Validate
-        uses: adminrl/tf-validate@v1.1
-        with:
-          context: ./
-          file: ./Dockerfile
+#      - name: Setup & Validate
+#        uses: adminrl/tf-validate@v1.1
+#        with:
+#          context: ./
+ #         file: ./Dockerfile
       
 
 #jobs: Run Validate
