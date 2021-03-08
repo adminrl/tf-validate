@@ -22,9 +22,10 @@ terraform --version
 
 RUN \
 # Install Git
-apt-get -y install git
+apt-get update && \
+apt-get -y install git && \
 # Check to see if Git is installed
-git version
+git version \
 # Clone repo to get script
 git clone https://github.com/adminrl/tf-validate.git
 
