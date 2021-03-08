@@ -27,16 +27,21 @@ apt-get -y install git && \
 # Check to see if Git is installed
 git version \
 # Clone repo to get script
-git clone https://github.com/adminrl/tf-validate.git
+git clone https://github.com/adminrl/tf-validate.git \
+# Check what directory we are in
+pwd \
+# Check if repo is there
+ls -la
+
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY adminrl/tf-validate/validate.sh  /validate.sh
+#COPY adminrl/tf-validate/validate.sh  /validate.sh
 
 # Make script executable
-RUN chmod +x validate.sh
+#RUN chmod +x validate.sh
 
 # Executes `validate.sh`
-ENTRYPOINT ["/validate.sh"]
+#ENTRYPOINT ["/validate.sh"]
 
 
 # Add files: configs, scripts, templates etc.
