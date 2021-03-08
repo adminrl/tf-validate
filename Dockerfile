@@ -19,13 +19,16 @@ mv terraform /usr/local/bin/ \
 # Check to see if Terraform is installed
 terraform --version 
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-#COPY adminrl/tf-validate/validate.sh  /validate.sh
+RUN git clone https://github.com/adminrl/tf-validate.git
 
-#RUN chmod +x validate.sh
+# Copies your code file from your action repository to the filesystem path `/` of the container
+COPY adminrl/tf-validate/validate.sh  /validate.sh
+
+# Make script executable
+RUN chmod +x validate.sh
 
 # Executes `validate.sh`
-#ENTRYPOINT ["/validate.sh"]
+ENTRYPOINT ["/validate.sh"]
 
 
 # Add files: configs, scripts, templates etc.
