@@ -9,7 +9,7 @@ RUN \
 apt-get update && \
 apt-get -y upgrade && \
 # Install Tree, Findutils, Xjobs, Wget, Unzip
-apt-get -y install tree findutils xjobs wget unzip \
+apt-get -y install tree findutils xjobs git-all wget unzip \
 #Install Terraform
 wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip \
 # Unzip 
@@ -18,6 +18,8 @@ unzip terraform_0.14.7_linux_amd64.zip \
 mv terraform /usr/local/bin/ \
 # Check to see if Terraform is installed
 terraform --version 
+#Check to see if Git is installed
+git version
 
 RUN git clone https://github.com/adminrl/tf-validate.git
 
