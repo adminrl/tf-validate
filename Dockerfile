@@ -23,7 +23,7 @@ echo terraform --version
 # Clone repo to get script
 RUN git clone https://github.com/adminrl/tf-validate.git
 RUN cd tf-validate
-RUN chmod +x validate.sh
+RUN chmod +x /tf-validate/validate.sh
 
 #WORKDIR /home/validate-test
 
