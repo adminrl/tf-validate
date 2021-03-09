@@ -19,17 +19,19 @@ mv terraform /usr/local/bin/ && \
 # Check to see if Terraform is installed
 echo terraform --version 
 
+COPY scripts/ /scripts/
+
 #RUN env | sort && \
 #find . && \
 #bash -c "pwd"
 
 # Clone repo to get script
-RUN git clone https://github.com/adminrl/tf-validate.git
-RUN cd tf-validate
-RUN chmod +x /tf-validate/validate.sh
+#RUN git clone https://github.com/adminrl/tf-validate.git
+#RUN cd tf-validate
+#RUN chmod +x /tf-validate/validate.sh
 
 # Executes `validate.sh`
-ENTRYPOINT ["/tf-validate/validate.sh"]
+#ENTRYPOINT ["/tf-validate/validate.sh"]
 
 #WORKDIR /home/validate-test
 
