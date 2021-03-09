@@ -21,6 +21,7 @@ echo terraform --version
 
 COPY scripts/ /scripts/
 RUN chmod +x /scripts/validate.sh
+RUN chmod +x /scripts/fmt-check.sh
 
 #RUN env | sort && \
 #find . && \
