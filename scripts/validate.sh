@@ -14,8 +14,8 @@ then
   providerDir=${providerFile%/provider.tf}
   cd ${providerDir}
   pwd
-  sudo terraform init -backend=false && \
-  sudo terraform validate
+  terraform init -backend=false && \
+  terraform validate
   cd ${home}
  done
 else
