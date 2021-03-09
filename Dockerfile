@@ -20,22 +20,18 @@ mv terraform /usr/local/bin/ && \
 echo terraform --version 
 
 
-
-RUN \
-# Check to see if Git is installed
-git version && \
-mkdir /home/validate-test && \
-cd /home/validate-test && \
 # Clone repo to get script
-git clone https://github.com/adminrl/tf-validate.git \
+RUN git clone https://github.com/adminrl/tf-validate.git
+RUN cd tf-validate
+RUN chmod +x validate.sh
 
-WORKDIR /home/validate-test
+#WORKDIR /home/validate-test
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 #COPY adminrl/tf-validate/validate.sh  /validate.sh
 
 # Make script executable
-RUN chmod +x /home/validate-test/validate.sh
+ 
 
 # Executes `validate.sh`
 #ENTRYPOINT ["/validate.sh"]
