@@ -25,16 +25,15 @@ RUN git clone https://github.com/adminrl/tf-validate.git
 RUN cd tf-validate
 RUN chmod +x /tf-validate/validate.sh
 
+# Executes `validate.sh`
+ENTRYPOINT ["/tf-validate/validate.sh"]
+
 #WORKDIR /home/validate-test
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 #COPY adminrl/tf-validate/validate.sh  /validate.sh
 
 # Make script executable
- 
-
-# Executes `validate.sh`
-#ENTRYPOINT ["/validate.sh"]
 
 
 # Add files: configs, scripts, templates etc.
