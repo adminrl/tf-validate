@@ -20,6 +20,7 @@ mv terraform /usr/local/bin/ && \
 echo terraform --version 
 
 COPY scripts/ /scripts/
+RUN chmod +x /scripts/validate.sh
 
 #RUN env | sort && \
 #find . && \
@@ -28,7 +29,7 @@ COPY scripts/ /scripts/
 # Clone repo to get script
 #RUN git clone https://github.com/adminrl/tf-validate.git
 #RUN cd tf-validate
-#RUN chmod +x /tf-validate/validate.sh
+
 
 # Executes `validate.sh`
 #ENTRYPOINT ["/tf-validate/validate.sh"]
