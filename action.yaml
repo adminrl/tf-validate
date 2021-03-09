@@ -7,7 +7,7 @@ description: Validate a terraform configuration directory.
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: validate.sh
+  entrypoint: ./validate.sh
 
 #jobs:
 
